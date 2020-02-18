@@ -1,14 +1,15 @@
 package service
 
 import (
+	"fmt"
 	"github.com/fuzej/go_5_blog/dao/db"
 	"github.com/fuzej/go_5_blog/model"
 )
 
-// 获取所有分类
-func GetALLCategoryList() (categoryList []*model.Category, err error) {
+func GetAllCategoryList() (categoryList []*model.Category, err error) {
 	categoryList, err = db.GetAllCategoryList()
 	if err != nil {
+		fmt.Printf("get category list failed, err:%v\n", err)
 		return
 	}
 	return

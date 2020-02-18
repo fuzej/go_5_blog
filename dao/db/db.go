@@ -6,8 +6,7 @@ import (
 )
 
 var (
-	DB  *sqlx.DB
-	err error
+	DB *sqlx.DB
 )
 
 func Init(dns string) error {
@@ -16,7 +15,6 @@ func Init(dns string) error {
 	if err != nil {
 		return err
 	}
-	// 查看是否连成功
 	err = DB.Ping()
 	if err != nil {
 		return err
